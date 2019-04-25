@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Recipe | The Jungle Cook</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav__logo">
+            <img src="images/logo.png" alt="The Jungle Cook logo">
+        </div>
+        <div class="nav__ham"><i class="fas fa-bars fa-lg"></i></div>
+        <div class="nav__links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <!--should this only show on login? Prototype is confusing.-->
+            <a href="#">Create Recipe</a>
+            <a href="#" class="button button--yellow nav__button">Login</a>
+        </div>
+    </nav>
+
+    <section class="add">
+        <div class="add__title">
+            <h1>Hey Maria, create your recipe!</h1>
+        </div>
+        <form action="#" class="form form__add">
+            <input type="text" placeholder="Add Recipe Image" name="image" id="image">
+            <input type="text" placeholder="Recipe Name" name="name" id="name">
+            <input type="text" placeholder="Recipe Description" name="description" id="desc">
+            <input type="number" placeholder="Hours" name="hour" id="hour">
+            <input type="number" placeholder="Minutes" name="minutes" id="minutes">
+            <input type="number" placeholder="Amount of Servings" name="servings" id="servings">
+            <p>Enter Ingredients: </p>
+            <input type="text" placeholder="Ingredient #1" name="ing0" id="ing0">
+            <p>Enter Instructions: </p>
+            <input type="text" placeholder="Instruction #1" name="inst0" id="inst0">
+            <input type="submit" value="Create Recipe" class="button button--red">
+        </form>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer__cr">
+            <p>Copyright &copy; 2019 The Jungle Cook</p>
+        </div>
+        <div class="footer__links">
+            <a href="#">Login</a>
+            <a href="#">Recipes By Category</a>
+            <a href="#">Privacy and Copyright</a>
+            <a href="#">Create Recipe</a>
+            <a href="#">Your Recipes</a>
+        </div>
+        <div class="footer__social">
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook Link">
+            </a>
+            <a href="#">
+                <img src="images/instagram.svg" alt="Instagram Link">
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-storage.js"></script>
+
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="app/firebaseUtility.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

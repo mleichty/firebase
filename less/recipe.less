@@ -1,0 +1,130 @@
+.recipe {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
+
+  .recipe__one {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+    width: 100%;
+    //background-color: red;
+
+    .recipe__top {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      margin-bottom: 30px;
+      //background-color: blue;
+      height: 90%;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+
+      .recipe__image {
+        height: 250px;
+        //background: url("../images/recipe-pizza.jpg") no-repeat center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+
+        //img {
+        //  border-radius: 20px;
+        //}
+      }
+
+      .recipe__info {
+        min-height: 200px;
+        border-radius: 20px;
+        background-color: white;
+        padding: 30px 30px 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .recipe__title {
+          text-align: center;
+          margin-bottom: 20px;
+          font-weight: bolder;
+          font-size: 20px;
+
+          .recipe__underline {
+            border-bottom: 4px solid black;
+          }
+        }
+
+        .recipe__desc {
+          margin-bottom: 20px;
+          width: 190px;
+          //background-color: red;
+        }
+
+        .recipe__ts {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 30px;
+
+          .recipe__SVG {
+            width: 40px;
+            margin: 5px;
+          }
+
+          .recipe__timeP {
+            margin: 5px;
+          }
+        }
+      }
+    }
+
+    @media all and (min-width: 768px) {
+      .recipe__top {
+        flex-direction: row;
+
+        .recipe__image {
+          width: 55%;
+          height: auto;
+        }
+
+        .recipe__info {
+          width: 45%;
+        }
+      }
+    }
+
+    .recipe__bottom {
+      //background-color: red;
+      display: flex;
+      justify-content: space-around;
+
+      .edit_recipe, .delete_recipe {
+        width: 170px;
+        text-align: center;
+        margin-right: 10px;
+      }
+    }
+
+    @media all and (min-width: 768px) {
+      .recipe__bottom {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .recipe {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .recipe__one {
+      width: 48%;
+      //margin-bottom: 0;
+    }
+  }
+}

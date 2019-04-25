@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe Detail | The Jungle Cook</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav__logo">
+            <img src="images/logo.png" alt="The Jungle Cook logo">
+        </div>
+        <div class="nav__ham"><i class="fas fa-bars fa-lg"></i></div>
+        <div class="nav__links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <!--should this only show on login? Prototype is confusing.-->
+            <a href="#">Create Recipe</a>
+            <a href="#" class="button button--yellow nav__button">Login</a>
+        </div>
+    </nav>
+
+    <section class="detail">
+        <div class="detail__half">
+            <div class="detail__left">
+                <div class="detail__image">
+                    <!--<img src="images/recipe-pizza.jpg" alt="">-->
+                </div>
+                <p class="detail__boldP detail__boldP--rotate">Supreme Pizza</p>
+            </div>
+            <div class="detail__right">
+                <p class="detail__boldP">Description</p>
+                <p>Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with
+                    vegetables and two types of meat. Yum!</p>
+                <p class="detail__boldP">Total Time:</p>
+                <p>1h 24min</p>
+                <p class="detail__boldP">Servings:</p>
+                <p>4 servings</p>
+            </div>
+        </div>
+
+        <div class="detail__bottom">
+            <!--do I need this div so I can append from JS?-->
+            <div class="detail__ing">
+                <p class="detail__boldP">Ingredients:</p>
+                <p>1/4 batch pizza dough</p>
+                <p>2 tablespoons Last-Minute Pizza Sauce</p>
+                <p>10 slices pepperoni</p>
+                <p>1 cup cooked and crumbled Italian sausage</p>
+                <p>2 large mushrooms, sliced</p>
+                <p>1/4 bell pepper, sliced</p>
+                <p>1 tablespoon sliced black olives</p>
+                <p>1 cup shredded mozzarella cheese</p>
+            </div>
+            <div class="detail__inst">
+                <p class="detail__boldP">Instructions:</p>
+                <p>1. Preheat the oven to 475°. Spray pizza pan with nonstick cooking or line a baking sheet with parchment paper.</p>
+                <p>2. Flatten dough into a thin round and place on the pizza pan.</p>
+                <p>3. Spread pizza sauce over the dough.</p>
+                <p>4. Layer the toppings over the dough in the order listed.</p>
+                <p>5. Bake for 8 to 10 minutes or until the crust is crisp and the cheese melted and lightly browned.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__cr">
+            <p>Copyright &copy; 2019 The Jungle Cook</p>
+        </div>
+        <div class="footer__links">
+            <a href="#">Login</a>
+            <a href="#">Recipes By Category</a>
+            <a href="#">Privacy and Copyright</a>
+            <a href="#">Create Recipe</a>
+            <a href="#">Your Recipes</a>
+        </div>
+        <div class="footer__social">
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook Link">
+            </a>
+            <a href="#">
+                <img src="images/instagram.svg" alt="Instagram Link">
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-storage.js"></script>
+
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="app/firebaseUtility.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

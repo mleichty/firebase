@@ -1,0 +1,102 @@
+.footer {
+  //align-self: flex-end;
+  //background-color: @darkpink;
+  //justify-self doesn't work with flex box
+  //justify-self: self-end;
+  //margin-top: -226.4px;
+  margin-top: -108.8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 30px;
+
+  .footer__cr {
+    order: 1;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    //background-color: @green;
+  }
+
+  .footer__links {
+    order: 3;
+    //width: 300px;
+    width: 400px;
+    text-align: center;
+    //background-color: @red;
+    a {
+      margin: 10px;
+      //display: block;
+    }
+  }
+
+  .footer__social {
+    order: 2;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    //background-color: @yellow;
+    a {
+      width: 30px;
+      //height: 100px;
+      margin: 10px;
+
+      &:hover {
+        border-bottom: 0;
+        //margin-bottom: 0;
+        ////color: @green;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media all and (min-width: 600px) {
+    .footer__links {
+      //width: 400px;
+
+      a {
+        //display: inline;
+      }
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    .footer__cr {
+      width: 50%;
+    }
+
+    .footer__links {
+      width: 800px;
+    }
+
+    .footer__social {
+      width: 50%;
+    }
+  }
+}
+
+@media all and (min-width: 600px) {
+  .footer {
+    //margin-top: -108.8px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .footer {
+    flex-wrap: nowrap;
+    margin-top: -70.4px;
+
+    .footer__links {
+      order: 2;
+      width: 1600px;
+    }
+
+    .footer__social {
+      order: 3;
+    }
+  }
+}

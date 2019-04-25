@@ -1,0 +1,62 @@
+.home {
+  min-height: 100vh;
+  background: linear-gradient(rgba(242,92,84,0.6), rgba(242,92,84,0.6)), url("../images/hero.jpg") no-repeat center;
+  background-size: cover;
+  //padding-top: 108px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .home__pink {
+    width: 175px;
+    height: 175px;
+    background-color: @pink;
+    border-radius: 100%;
+    //position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -70px;
+    margin-right: -200px;
+
+    .home__p2 {
+      width: 150px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  .home__yellow {
+    width: 300px;
+    height: 300px;
+    background-color: @yellow;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .home__p1 {
+      width: 150px;
+      text-align: center;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    .home__pink {
+      width: 200px;
+      height: 200px;
+      margin-bottom: -100px;
+      margin-right: -350px;
+    }
+    .home__yellow {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}

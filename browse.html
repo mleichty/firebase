@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browse Recipes | The Jungle Cook</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav__logo">
+            <img src="images/logo.png" alt="The Jungle Cook logo">
+        </div>
+        <div class="nav__ham"><i class="fas fa-bars fa-lg"></i></div>
+        <div class="nav__links">
+            <a href="index.html">Home</a>
+            <a href="browse.html" class="show">Browse</a>
+            <!--should this only show on login? Prototype is confusing.-->
+            <a href="#">Create Recipe</a>
+            <a href="#" class="button button--yellow nav__button">Login</a>
+        </div>
+    </nav>
+
+    <section class="browse">
+        <div class="browse__title">
+            <h1>Recipes: Try some today!</h1>
+        </div>
+        <div class="recipe">
+            <!--Working individual recipe code-->
+            <div class="recipe__one">
+                <div class="recipe__image">
+                    <!--<img src="images/recipe-pizza.jpg" alt="">-->
+                </div>
+                <div class="recipe__info">
+                    <div class="recipe__title">
+                        <p><span class="recipe__underline">Supreme Pizza</span></p>
+                    </div>
+                    <div class="recipe__desc">
+                        <p>Make pizza night super duper out of this world with homemade pizza. This recipe is supreme
+                            with
+                            vegetables and two types of meat. Yum!</p>
+                    </div>
+                    <div class="recipe__ts">
+                        <div class="recipe__SVG">
+                            <img src="images/time.svg" alt="">
+                        </div>
+                        <div class="recipe__P">
+                            <p>1h 24min</p>
+                        </div>
+                    </div>
+                    <div class="recipe__ts">
+                        <div class="recipe__SVG">
+                            <img src="images/servings.svg" alt="">
+                        </div>
+                        <div class="recipe__P">
+                            <p>4 servings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__cr">
+            <p>Copyright &copy; 2019 The Jungle Cook</p>
+        </div>
+        <div class="footer__links">
+            <a href="#">Login</a>
+            <a href="#">Recipes By Category</a>
+            <a href="#">Privacy and Copyright</a>
+            <a href="#">Create Recipe</a>
+            <a href="#">Your Recipes</a>
+        </div>
+        <div class="footer__social">
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook Link">
+            </a>
+            <a href="#">
+                <img src="images/instagram.svg" alt="Instagram Link">
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-storage.js"></script>
+
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="app/firebaseUtility.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

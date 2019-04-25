@@ -1,0 +1,31 @@
+.button {
+  font-family: @caveat;
+  padding: 7px 35px;
+  box-shadow: 0 5px 10px -3px black;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media all and (min-width: 768px) {
+    &:hover {
+      background-color: @green;
+    }
+  }
+}
+
+.button--yellow {
+  background-color: @yellow;
+}
+
+.button--red {
+  background-color: @red;
+}

@@ -1,0 +1,122 @@
+.detail {
+  min-height: 100vh;
+  padding: 150px 30px 100px 30px;
+  display: none;
+  flex-direction: column;
+  //align-items: center;
+  justify-content: center;
+
+  .detail__half {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+    //background-color: orange;
+    //margin-top: -300px;
+
+    .detail__left {
+      //display: flex;
+      //align-items: center;
+      //background-color: blue;
+      max-height: 300px;
+      margin-bottom: 70px;
+
+      //.detail__boldP {
+      //  //width: 10%;
+      //  background-color: red;
+      //  align-self: flex-start;
+      //}
+
+      .detail__image {
+        width: 100%;
+        //background-color: yellow;
+        //background: url("../images/recipe-pizza.jpg") no-repeat center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+
+        //img {
+        //  //height: 300px;
+        //}
+      }
+    }
+
+    .detail__right {
+      //background-color: green;
+    }
+
+    @media all and (min-width: 768px) {
+      .detail__right {
+        width: 70%;
+      }
+    }
+  }
+
+  @media all and (min-width: 1200px) {
+    .detail__half {
+      flex-direction: row;
+      margin-bottom: 70px;
+
+      .detail__left {
+        width: 48%;
+        margin-bottom: 0;
+      }
+
+      .detail__right {
+        width: 48%;
+      }
+    }
+  }
+
+  .detail__bottom {
+    margin-bottom: 70px;
+    //background-color: grey;
+
+    .edit_recipe {
+      width: 200px;
+      text-align: center;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    .detail__bottom {
+      width: 70%;
+    }
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .detail {
+    padding: 150px 90px 100px 90px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .detail {
+    padding: 150px 130px 100px 130px;
+  }
+}
+
+.detail__boldP {
+  font-weight: bolder;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.detail__boldP--rotate {
+  text-align: right;
+  background-color: rgba(255, 255, 255, 0.65);
+  //transform: scaleX(-1);
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  width: 300px;
+  //margin-left: -300px;
+  margin-bottom: 0 !important;
+  padding: 5px;
+}
+

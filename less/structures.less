@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: @gillsans, "sans-serif";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 16px;
+  font-family: @caveat;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+p {
+  //why is this causing random space at the bottom?
+  //margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    border-bottom: 2px solid black;
+    margin-bottom: -2px;
+  }
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
