@@ -44,15 +44,15 @@ var FIREBASE_UTILITY = (function () {
         let ingArray2 = [];
         $.each(ingArray, function(idx, value){
             ingArray2.push(value.value);
-            console.log(idx, value);
-            console.log(value.value);
+            // console.log(idx, value);
+            // console.log(value.value);
         });
         console.log(ingArray2);
         let instArray2 = [];
         $.each(instArray, function(idx, value){
             instArray2.push(value.value);
-            console.log(idx, value);
-            console.log(value.value);
+            // console.log(idx, value);
+            // console.log(value.value);
         });
         console.log(instArray2);
         firebase.database().ref('recipes/' + newrecipeKey).set({
@@ -137,10 +137,10 @@ var FIREBASE_UTILITY = (function () {
     }
 
 // this will delete a recipe. You will need the key reference
-    var _deleteRecipe = function() {
+    var _deleteRecipe = function(recipeKey) {
         firebase
             .database()
-            .ref('recipes/-LcaOLrK0oM3XYN97TsF')
+            .ref('recipes/' + recipeKey)
             .remove();
     };
 
@@ -178,6 +178,7 @@ var FIREBASE_UTILITY = (function () {
         $.each(instArray, function(idx, value){
             instArray2.push(value.value);
         });
+        console.log(instArray2);
 
         firebase.database().ref('recipes/' + recipeKey).update({
             image: recipeArray[0].value,
