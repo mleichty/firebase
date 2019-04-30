@@ -63,6 +63,17 @@ var FIREBASE_UTILITY = (function () {
             servingSize: recipeArray[5].value,
             ingredients: ingArray2,
             instructions: instArray2
+        }, function(error) {
+            if (error) {
+                // How do I send this back to app.js?
+            //    Do I use a callback? How does that work if I'm sending
+            //    parameters to this function?
+                alert("There was a database error.");
+            } else {
+                // Data saved successfully!
+                alert(recipeArray[1].value + " was successfully added.");
+                document.location.reload(true);
+            }
         });
     };
 
@@ -98,11 +109,7 @@ var FIREBASE_UTILITY = (function () {
 // this will get all the data in the database once
     var _getAllRecipes = function(callback) {
         console.log('Show');
-        firebase
-            .database()
-            .ref('recipes/')
-            .once('value')
-            .then(function (snapshot) {
+        firebase.database().ref('recipes/').once('value').then(function (snapshot) {
                 // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
                 console.log(snapshot.val());
                 var recipesArray = snapshot.val();
@@ -138,10 +145,15 @@ var FIREBASE_UTILITY = (function () {
 
 // this will delete a recipe. You will need the key reference
     var _deleteRecipe = function(recipeKey) {
-        firebase
-            .database()
-            .ref('recipes/' + recipeKey)
-            .remove();
+        firebase.database().ref('recipes/' + recipeKey).remove(
+            function(error) {
+                if (error) {
+                    alert("There was a database error.");
+                } else {
+                    alert("Your recipe was successfully deleted.");
+                    document.location.reload(true);
+                }
+            })
     };
 
 // function used to update a user
@@ -188,6 +200,17 @@ var FIREBASE_UTILITY = (function () {
             servingSize: recipeArray[5].value,
             ingredients: ingArray2,
             instructions: instArray2
+        }, function(error) {
+            if (error) {
+                // How do I send this back to app.js?
+                //    Do I use a callback? How does that work if I'm sending
+                //    parameters to this function?
+                alert("There was a database error.");
+            } else {
+                // Data saved successfully!
+                alert(recipeArray[1].value + " was successfully updated.");
+                document.location.reload(true);
+            }
         });
     };
 

@@ -151,12 +151,12 @@ function init_editView(recipes) {
         currentView = "edit";
 
         $('.form__edit').append(
-            `<input value="${recipes[recipeKey].image}" type="text" name="image" id="edit_image">
-        <input value="${recipes[recipeKey].name}" type="text" name="name" id="edit_name">
-        <input value="${recipes[recipeKey].description}" type="text" name="description" id="edit_desc">
-        <input value="${recipes[recipeKey].time.hour}" type="number" name="hour" id="edit_hour">
-        <input value="${recipes[recipeKey].time.min}" type="number" name="minutes" id="edit_minutes">
-        <input value="${recipes[recipeKey].servingSize}" type="number" name="servings" id="edit_servings">
+            `<input value="${recipes[recipeKey].image}" placeholder="Add Recipe Image" type="text" name="image" id="edit_image">
+        <input value="${recipes[recipeKey].name}" placeholder="Recipe Name" type="text" name="name" id="edit_name">
+        <input value="${recipes[recipeKey].description}" placeholder="Recipe Description" type="text" name="description" id="edit_desc">
+        <input value="${recipes[recipeKey].time.hour}" placeholder="Hours" type="number" name="hour" id="edit_hour">
+        <input value="${recipes[recipeKey].time.min}" placeholder="Minutes" type="number" name="minutes" id="edit_minutes">
+        <input value="${recipes[recipeKey].servingSize}" placeholder="Amount of Servings" type="number" name="servings" id="edit_servings">
         <div class="ingWrapper">
             <p>Enter Ingredients: </p>
             <div class="ingInput">
@@ -196,17 +196,21 @@ function init_editFB(recipeKey) {
     $('#edit_recipe').click(function (e) {
         e.preventDefault();
         console.log('Edit');
+        if ($('#edit_image').val() == "" || $('#edit_name').val() == "" || $('#edit_desc').val() == "" || $('#edit_hour').val() == "" || $('#edit_minutes').val() == "" || $('#edit_servings').val() == "") {
+            alert("Please fill out all fields.");
+        } else {
 
-        var recipeArray = $('.form__edit input').serializeArray();
-        console.log(recipeArray);
+            var recipeArray = $('.form__edit input').serializeArray();
+            console.log(recipeArray);
 
-        var ingArray = $('.form__edit .ingInput input').serializeArray();
-        console.log(ingArray);
+            var ingArray = $('.form__edit .ingInput input').serializeArray();
+            console.log(ingArray);
 
-        var instArray = $('.form__edit .instInput input').serializeArray();
-        console.log(instArray);
+            var instArray = $('.form__edit .instInput input').serializeArray();
+            console.log(instArray);
 
-        FIREBASE_UTILITY.updateRecipe(recipeKey, recipeArray, ingArray, instArray);
+            FIREBASE_UTILITY.updateRecipe(recipeKey, recipeArray, ingArray, instArray);
+        }
     });
 }
 
@@ -246,36 +250,62 @@ function init() {
     $('#add_recipe').click(function (e) {
         e.preventDefault();
         console.log('Add');
-        // var newName = $('#addRecipeName').val();
-        //ATTEMPT 1: serialize()
-        //this only returns a URL-type string and can't access values
-        // var recipeArray = $('.form__add input').serialize();
-        //ATTEMPT 2: makeArray()
-        //this doesn't have values, just the input#id
-        // var recipeInfo = $('.form__add input');
-        // console.log(recipeInfo);
-        // var recipeArray = $.makeArray(recipeInfo);
-        //ATTEMPT 3: serializeArray()
-        var recipeArray = $('.form__add input').serializeArray();
-        console.log(recipeArray);
-        //ATTEMPT 3.1: put serializeArray() into object format so can loop through ings and insts
-        //this only got last value of the ing or inst array
-        // var inputs = {};
-        // $.each(recipeArray, function(k, v){
-        //     inputs[v.name]= v.value;
-        // });
-        //ATTEMPT 3.2: put ingInputs into different array?
-        //ATTEMPT 3.3: loop through ingArray in model? WORKED! WTF
-        var ingArray = $('.form__add .ingInput1 input').serializeArray();
-        console.log(ingArray);
-        // var ingInputs = {};
-        // $.each(ingArray, function(k, v){
-        //     ingInputs[v.name]= v.value;
-        // });
-        // console.log(ingInputs);
-        var instArray = $('.form__add .instInput1 input').serializeArray();
-        console.log(instArray);
-        FIREBASE_UTILITY.writeRecipe(recipeArray, ingArray, instArray);
+        if ($('#image').val() == "" || $('#name').val() == "" || $('#desc').val() == "" || $('#hour').val() == "" || $('#minutes').val() == "" || $('#servings').val() == "") {
+            alert("Please fill out all fields.");
+        } else {
+            // var newName = $('#addRecipeName').val();
+            //ATTEMPT 1: serialize()
+            //this only returns a URL-type string and can't access values
+            // var recipeArray = $('.form__add input').serialize();
+            //ATTEMPT 2: makeArray()
+            //this doesn't have values, just the input#id
+            // var recipeInfo = $('.form__add input');
+            // console.log(recipeInfo);
+            // var recipeArray = $.makeArray(recipeInfo);
+            //ATTEMPT 3: serializeArray()
+            var recipeArray = $('.form__add input').serializeArray();
+            console.log(recipeArray);
+            //ATTEMPT 3.1: put serializeArray() into object format so can loop through ings and insts
+            //this only got last value of the ing or inst array
+            // var inputs = {};
+            // $.each(recipeArray, function(k, v){
+            //     inputs[v.name]= v.value;
+            // });
+            //ATTEMPT 3.2: put ingInputs into different array?
+            //ATTEMPT 3.3: loop through ingArray in model? WORKED! WTF
+            var ingArray = $('.form__add .ingInput1 input').serializeArray();
+            console.log(ingArray);
+            // var ingInputs = {};
+            // $.each(ingArray, function(k, v){
+            //     ingInputs[v.name]= v.value;
+            // });
+            // console.log(ingInputs);
+            var instArray = $('.form__add .instInput1 input').serializeArray();
+            console.log(instArray);
+            FIREBASE_UTILITY.writeRecipe(recipeArray, ingArray, instArray);
+        }
+    });
+
+    $('#login_user').click(function (e) {
+        e.preventDefault();
+        console.log('Login');
+        if ($('#email1').val() == "" || $('#password1').val() == "") {
+            alert("Please fill out all fields");
+        } else {
+            var loginArray = $('#login_form input').serializeArray();
+            console.log(loginArray);
+        }
+    });
+
+    $('#register_user').click(function (e) {
+        e.preventDefault();
+        console.log('Register');
+        if ($('#fName').val() == "" || $('#lName').val() == "" || $('#email2').val() == "" || $('#password2').val() == "") {
+            alert("Please fill out all fields");
+        } else {
+            var registerArray = $('#register_form input').serializeArray();
+            console.log(registerArray);
+        }
     });
 
     //add and delete ingredient divs
